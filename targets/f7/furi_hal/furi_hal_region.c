@@ -73,17 +73,7 @@ const FuriHalRegion furi_hal_region_jp = {
 static const FuriHalRegion* furi_hal_region = NULL;
 
 void furi_hal_region_init() {
-    FuriHalVersionRegion region = furi_hal_version_get_hw_region();
-
-    if(region == FuriHalVersionRegionUnknown) {
-        furi_hal_region = &furi_hal_region_zero;
-    } else if(region == FuriHalVersionRegionEuRu) {
-        furi_hal_region = &furi_hal_region_eu_ru;
-    } else if(region == FuriHalVersionRegionUsCaAu) {
-        furi_hal_region = &furi_hal_region_us_ca_au;
-    } else if(region == FuriHalVersionRegionJp) {
-        furi_hal_region = &furi_hal_region_jp;
-    }
+    furi_hal_region = &furi_hal_region_zero;
 }
 
 const FuriHalRegion* furi_hal_region_get() {
